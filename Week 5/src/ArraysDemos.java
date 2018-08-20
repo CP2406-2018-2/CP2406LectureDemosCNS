@@ -14,6 +14,7 @@ public class ArraysDemos {
 
 //        String name = "hello";
 //
+//        // this loop is equivalent to the previous for loop
 //        int i = 0;
 //        while (i < names.length) {
 //            names[i] = new String();
@@ -35,7 +36,6 @@ public class ArraysDemos {
         //System.out.println("done");
 
         // primitive arrays are objects
-
         char[][] ticTacToe = new char[3][3];
         for (int i = 0; i < ticTacToe.length; ++i) {
             for (int j = 0; j < ticTacToe[i].length; ++j) {
@@ -43,7 +43,7 @@ public class ArraysDemos {
             }
         }
 
-        // ragged array example
+        // ragged array example - each row in this array has a different length
         int[][] data;
         data = new int[10][];
         for (int i = 0; i < data.length; ++i) {
@@ -53,17 +53,14 @@ public class ArraysDemos {
             }
         }
 
-        // display contents of ragged array
+        // display contents of ragged array - using nested foreach loops
+        // make note of the type of row and col
         for (int[] row : data) {
             for (int col : row) {
                 System.out.print(col + ",");
             }
             System.out.println();
         }
-
-//        for (int i = 0; i < ticTacToe.length; ++i) {
-//            ticTacToe[i] = new char[3];
-//        }
 
         System.out.println(Arrays.toString(ticTacToe));
         for (char[] row : ticTacToe) {
@@ -84,26 +81,19 @@ public class ArraysDemos {
             System.out.println();
         }
 
-        // foreach loop
-
         // parallel arrays
-
         String[] person = {"Royce", "Rob", "Isabelle"};
         int[] age = {21, 20, 24};
 
         Dictionary<String, Integer> ages;
         //Map<String, Integer>
 
-        // arrays - pass by ref
-
+        // function that returns a new array
         String[] listOfNames = createNames(20);
+        // arrays are pass by ref - the array contents are not duplicated
         display(listOfNames);
 
-
-        // Arrays class - toString, binarySearch
-
         // ArrayList
-
         List<Double> values = new ArrayList<>();
 
         values.add(3.0);
@@ -111,12 +101,6 @@ public class ArraysDemos {
         values.add(16.8);
         values.add(12.0);
         values.add(6.0);
-
-        // basic sorting (bubble sort, insertion sort)
-
-        // multi-dimensional arrays, length rows / cols
-
-
 
         // enums, with switches
         Weekdays day = Weekdays.MONDAY;
@@ -150,6 +134,7 @@ public class ArraysDemos {
 
         String[] result = new String[size];
 
+//        // note: we can't use a foreach loop to set the values in an array
 //        int i = 1;
 //        for (String name : result) {
 //            name = "bob" + i++;
